@@ -17,16 +17,7 @@ public class Merge
    ******************************************************/
   private static int[] merge( int[] a, int[] b )
   {
-      int[] retList = new int[a.length + b.length];
-      int aPos = 0, bPos = 0;
-      for(int x = 0; x < retList.length; x ++) {
-	  if(a[aPos] < b[bPos]) {
-	      retList[x] = a[aPos];
-	      aPos ++;
-	  }
-	  else
-      }
-      return retList;
+
   }//end merge()
 
 
