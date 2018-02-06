@@ -1,0 +1,31 @@
+Andrew Shao
+APCS2 pd2
+HW04 -- So Easy, Even a Caveturtle Can Do It
+2018-02-06T
+
+If you have 1 deck:
+
+	If your deck has 1 card:
+	
+		Your deck is sorted.
+	
+		If someone previously gave you a deck:
+		
+			Give the deck to the person who previously gave you a deck.
+		
+	Else:
+	
+		Split your deck into 2 smaller decks.
+		
+		Give each deck to a different person who has not previously received any decks.
+		
+Else:
+
+	Using OddFuture's linear runtime 2 deck merge sort, merge the 2 decks into 1 sorted deck.
+	
+	Your deck is sorted.
+	
+	If someone previously gave you a deck:
+	
+		Give the deck to the person who previously gave you a deck.
+		
