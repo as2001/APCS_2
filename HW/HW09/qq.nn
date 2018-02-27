@@ -1,0 +1,90 @@
+Andrew Shao
+APCS2 Pd2
+HW09 -- Yaaasss Queens
+2018-02-27T
+
+I tried and couldn't figure out an algorithm to determine whether cases were solvable 
+and how many solutions there were for solvable cases.
+
+So I wrote a Java class to calculate the number of solutions for any nxn case (where n > 0),
+where unsolvable cases simply had 0 solutions. 
+
+Each solution is not necessarily unique from each other in the sense that one solution could
+be simply a rotation of another. 
+
+To calculate the total number of solutions, my program simply linearly iterates through every configuration
+and tests if the configuration is a solution.
+
+Using the fact that a queen can move horizontally and vertically,
+in all solutions for any solvable case there would be only 1 queen per row.
+
+Based off that my program represents a configuration with an array of size n, 
+where each element was the column position of a queen in a specific row, and
+index number is equal to the row number.
+
+There are n ^ n configurations where each row has only 1 queen.
+
+Given that every row has a queen, in order for a configuration to not be a solution,
+there must be at least 2 queens that either are in the same column or same diagonal.
+My program uses this logic to determine whether a configuraiton is a solution.
+
+Results:
+2x2 case	-	0 	solutions
+3x3 case	-	0 	solutions
+4x4 case	-	2 	solutions
+5x5 case	-	10 	solutions
+6x6 case	-	4 	solutions
+7x7 case	-	40	solutions
+8x8 case	-	92	solutions
+
+
+The code:
+
+public class QueensTester
+{	
+	
+	//testBoard(int[])
+	//returns boolean value indicating whether or not input configuration is a solution
+	public static boolean testBoard(int[] board)
+	{
+		for(int x = 0; x < board.length; x ++)
+			for(int y = 0; y < board.length; y ++)
+			{
+				if(x != y) 
+				{
+					if(board[x] == board[y])
+						return false;
+					if(Math.abs(y - x) == Math.abs(board[y] - board[x]))
+						return false;
+				}
+			}
+		return true;
+	}	
+	
+	//printTest(int)
+	//prints the number of solutions for a nxn board 
+	public static void printTest(int n)
+	{
+		int[] board = new int[n];
+		int solutions = 0;
+		for(int x = 0; x < Math.pow(n, n); x ++)
+		{
+			int y = x;
+			for(int z = 0; z < n; z ++)
+			{
+				board[z] = y / (int)Math.pow(n, n - (1 + z));
+				y = y % (int)Math.pow(n, n - (1 + z));
+			}
+			if(testBoard(board))
+				solutions += 1;
+		}
+		System.out.println("For the case " + n + "x" + n + " there are "  + solutions + " solutions.");
+	}	
+	
+	public static void main(String args[])
+	{
+		for(int x = 2; x < 9; x ++)
+			printTest(x);
+	}	
+	
+}
