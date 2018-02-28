@@ -141,9 +141,9 @@ public class QueenBoard
 
 
   /***
-   * <General description>
-   * precondition: 
-   * postcondition: 
+   * toString
+   * precondition: _board exists.
+   * postcondition: Prints board.
    */
   public String  toString() 
   {
