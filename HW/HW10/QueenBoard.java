@@ -28,7 +28,11 @@ public class QueenBoard
    */
   public boolean solve()
   {
-    return false;
+    if(solveH(0))
+		return true;
+	for(int x = 0; x < Math.pow(_board.length, 2); x ++)//fills board with 0's
+		_board[x / _board.length][x % _board.length] = 0;
+	return false;
   }
 
   
@@ -37,7 +41,18 @@ public class QueenBoard
    */
   private boolean solveH( int col ) 
   {
-    return false;
+    if(col == _board.length)
+		return true;
+	for(int row = 0; row < _board.length; row ++)
+	{
+		if(addQueen(row, col))
+		{
+			if(solveH(col + 1))
+				return true;
+			removeQueen(row,col);
+		}
+	}
+	return false;
   }
 
 
@@ -48,6 +63,20 @@ public class QueenBoard
         all negs and 0's replaced with underscore
         all 1's replaced with 'Q'
     */
+	System.out.println();
+	for( int r = 0; r < _board.length; r++ )
+	{
+	    for( int c = 0; c < _board[0].length; c++ )
+		{
+			if(_board[r][c] < 1)
+				System.out.print("_");
+			else
+				System.out.print("Q");
+			System.out.print(" ");
+	    }
+	    System.out.println();
+    }
+	System.out.println();
   }
 
 
@@ -55,9 +84,12 @@ public class QueenBoard
   //================= YE OLDE SEPARATOR =================
 
   /***
-   * <General description>
-   * precondition: 
-   * postcondition: 
+   * Adds a queen to the board and marks positions where additional queens can't be placed.
+   * precondition: Input integers are less than board dimensions.
+   * postcondition: If a queen can be put at the inputed position, the position will be marked with a 1
+   * and all positions to the right of the inputed position where queens can't be placed
+   * will have their values decremented by 1. Returns true.
+   * If a queen can't be placed at the inputed position returns false.
    */
   private boolean addQueen(int row, int col){
     if(_board[row][col] != 0){
@@ -80,9 +112,12 @@ public class QueenBoard
 
 
   /***
-   * <General description>
-   * precondition: 
-   * postcondition: 
+   * Removes a queen from the board and undoes the marking of positions by placing that queen.
+   * precondition: Input integers are less than board dimensions.
+   * postcondition: If a queen is at the inputed position, the value at the position will be changed 
+   * back to 0 and all positions decremented by the placement of that queen will be incremented by 1.
+   * Returns true.
+   * If there is no queen at the inputed position returns false.
    */
   private boolean removeQueen(int row, int col){
     if ( _board[row][col] != 1 ) {
@@ -126,13 +161,21 @@ public class QueenBoard
   //main method for testing...
   public static void main( String[] args )
   {
-    QueenBoard b = new QueenBoard(5);
-    System.out.println(b);
-    b.addQueen(3,0);
-    b.addQueen(0,1);
-    System.out.println(b);
-    b.removeQueen(3,0);
-    System.out.println(b);
+    // QueenBoard b = new QueenBoard(5);
+    // System.out.println(b);
+    // b.addQueen(3,0);
+    // b.addQueen(0,1);
+    // System.out.println(b);
+    // b.removeQueen(3,0);
+    // System.out.println(b);
+	QueenBoard c;
+	for(int x = 2; x < 9; x ++)
+	{
+		c = new QueenBoard(x);
+		c.solve();
+		System.out.println("Solution for " + x + "x" + x + ":");
+		c.printSolution();
+	}
   }
     
 }//end class
