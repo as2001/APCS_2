@@ -1,0 +1,12 @@
+Andrew Shao
+APCS2 pd2
+HW11 -- Get On the Bus
+2018-03-01R
+
+1.	Begin at top left corner as starting knight position.
+2.	Search in a clockwise fashion from the top for positions the knight can move too.
+3.	If such a position exists, move the knight to the first position found.
+	Else 
+		If the knight is still at its starting position, move the knight to a new starting position.
+		Else move the knight back to its previous position.
+4. Go back to step 2 until solution is found.
