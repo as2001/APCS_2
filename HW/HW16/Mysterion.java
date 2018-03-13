@@ -60,6 +60,8 @@ public class Mysterion {
 	public static void main (String args[]) {
 		int[] arr = {9,4,6,7,12,1,2,5,10,3,11,8,0};
 		System.out.println(divideSort(arr, 4, 10, 1));
+		int[] arr2 = {1,9,8,7,6,5,4,3,2,10};
+		System.out.println(divideSort(arr2,0,8,0));
 	}
 	
 }
