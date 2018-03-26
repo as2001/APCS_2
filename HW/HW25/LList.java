@@ -1,12 +1,12 @@
 //	Andrew Shao
 //	APCS2 pd2
-//	HW24b -- On the DLL
-//	2018-03-26M
+//	HW25 -- Generically Speaking...
+//	2018-03-27T
 
 /*****************************************************
  * class LList
- * Implements a linked list of DLLNodes, each containing String data
- * new in v3: , remove
+ * Implements a linked list of DLLNodes, each containing data
+ * new in v4, generic type
  *****************************************************/
 
 public class LList<T> implements List<T> //your List interface must be in same dir

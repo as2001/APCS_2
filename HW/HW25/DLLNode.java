@@ -1,7 +1,7 @@
 //	Andrew Shao
 //	APCS2 pd2
-//	HW24a -- On the DLL
-//	2018-03-26M
+//	HW25 -- Generically Speaking...
+//	2018-03-27T
 
 /*****************************************************
  * class DLLNode
