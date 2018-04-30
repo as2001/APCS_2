@@ -1,0 +1,61 @@
+Andrew Shao
+APCS2 pd2
+HW41 -- A Tree Grows in 251
+2018-04-30M
+
+If given a pre-order and a post-order traversal...
+
+EXAMPLE: pre-order - WHITEOAK; post-order - TEIHKAOW
+
+The first value of the pre-order is the root (W). The last value of the pre-order is the bottom right leaf 
+(K). The first value of the post-order is the bottom left leaf (T). The values between the bottom left 
+value and the root value in the pre-order are the branches the bottom left leaf extends from (H is left 
+branch of W, I is branch of H, and T is leaf of I). Similarly, the values between the bottom right value 
+and the root value in the post-order are the branches the bottom right leaf extends from. Use the fact that 
+pre-order goes down branches and post-order goes up branches to complete the tree.
+
+   W
+  / \
+  H O
+ /   \
+ I   A
+/ \   \
+T E   K
+
+
+If given a pre-order and an in-order traversal...
+
+EXAMPLE: pre-order - EGDKINLOW; in-order - EKDNIOLWG
+
+Write out the in-order values. Drop the values down n layers, where n is that value's index in the 
+pre-order. Then connect the branches and leaves. The value "x" in the layer immediately beneath a value "y"
+is y's left or right branch/leaf, depending on whether x is left or right of y. The value "z" in the layer
+immediately below x's layer but on the opposite side of y is y's other branch/leaf. Use this to finish
+the tree.
+
+ E
+  \
+  G
+ / \
+ D I
+/ / \
+K N L
+   / \
+   O W
+   
+
+If given a post-order and an in-order traversal...
+
+EXAMPLE: post-order - UGOASLD; in-order - UOGDALS
+
+Write out the in-order values. Raise the values ip n layers, where n is that value's index in the 
+pre-order. Then connect the branches and leaves. The value "x" in the layer immediately beneath a value "y"
+is y's left or right branch/leaf, depending on whether x is left or right of y. The value "z" in the layer
+immediately below x's layer but on the opposite side of y is y's other branch/leaf. Use this to finish
+the tree.
+
+   D
+ /   \
+ O   L
+/ \ / \
+U G A S

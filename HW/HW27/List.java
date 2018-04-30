@@ -18,7 +18,7 @@ public interface List<T> extends Iterable<T>
     //insert element T at index i
     public void add( int i, T newVal );
 
-    //remove element at index i
+    //remove element at index is
     public T remove( int i );
 
     //return element at index i
