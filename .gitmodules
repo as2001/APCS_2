@@ -1,3 +1,6 @@
 [submodule "Labs/Lab00/TootTootCabbage"]
 	path = Labs/Lab00/TootTootCabbage
 	url = https://github.com/LargeLlama/TootTootCabbage.git
+[submodule "Labs/Lab01/ChallengerNunu"]
+	path = Labs/Lab01/ChallengerNunu
+	url = https://github.com/WilliamLu0211/ChallengerNunu.git
