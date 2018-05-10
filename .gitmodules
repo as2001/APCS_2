@@ -1,0 +1,3 @@
+[submodule "Labs/Lab00/TootTootCabbage"]
+	path = Labs/Lab00/TootTootCabbage
+	url = https://github.com/LargeLlama/TootTootCabbage.git
