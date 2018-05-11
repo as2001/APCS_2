@@ -4,3 +4,6 @@
 [submodule "Labs/Lab01/ChallengerNunu"]
 	path = Labs/Lab01/ChallengerNunu
 	url = https://github.com/WilliamLu0211/ChallengerNunu.git
+[submodule "Labs/Lab02/_doge"]
+	path = Labs/Lab02/_doge
+	url = https://github.com/bnidevs/_doge.git
